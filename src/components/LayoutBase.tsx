@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export interface LayoutBaseProps {
+type LayoutBaseProps = {
   children: React.ReactNode
 }
 

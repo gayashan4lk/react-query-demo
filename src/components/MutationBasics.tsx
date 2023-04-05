@@ -1,7 +1,7 @@
 // mutations are typically used to create/update/delete data or perform server side-effects.
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { wait, posts } from "../utils"
+import { wait, posts } from "../util-funcs"
 
 export function MutationBasics() {
   const queryClient = useQueryClient()

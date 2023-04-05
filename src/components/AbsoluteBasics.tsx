@@ -3,7 +3,7 @@
 // useQuery returns a query object which has so many properties including isLoading, isError, data, error
 
 import { useQuery } from "@tanstack/react-query"
-import { wait, posts } from "../utils"
+import { wait, posts } from "../util-funcs"
 
 export function AbsoluteBasics() {
   const postsQuery = useQuery({

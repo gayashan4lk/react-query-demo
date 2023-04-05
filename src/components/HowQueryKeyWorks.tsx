@@ -1,7 +1,7 @@
 // Using the queryKey you can identify the query and invalidate it
 
 import { useQuery } from "@tanstack/react-query"
-import { wait, posts } from "../utils"
+import { wait, posts } from "../util-funcs"
 
 export function HowQueryKeyWorks() {
   const postsQuery = useQuery({

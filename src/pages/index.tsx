@@ -1,5 +1,5 @@
 import { Welcome } from "../components/Welcome"
-import { useQuery, useMutation } from "@tanstack/react-query"
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 
 const posts = [
   { id: "1", title: "Hello Next.js" },
@@ -11,7 +11,7 @@ function wait(duration: number) {
 }
 
 export default function Home() {
-  console.log(posts)
+  const queryClient = useQueryClient()
 
   const postsQuery = useQuery({
     queryKey: ["posts"],
@@ -26,6 +26,7 @@ export default function Home() {
   const postsMutation = useMutation({
     mutationFn: (title: string) =>
       wait(1000).then(() => posts.push({ id: crypto.randomUUID(), title })),
+    onSuccess: () => queryClient.invalidateQueries(["posts"]),
   })
 
   if (postsQuery.isLoading) return <div>Loading...</div>

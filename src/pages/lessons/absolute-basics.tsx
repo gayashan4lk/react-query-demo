@@ -1,9 +1,10 @@
 import { AbsoluteBasics } from "@/components/AbsoluteBasics"
+import { LessonTitle } from "../../components/LessonTitle"
 
 export default function Home() {
   return (
     <>
-      <h1>Absolute Basics</h1>
+      <LessonTitle label="Absolute Basics" />
       <AbsoluteBasics />
     </>
   )

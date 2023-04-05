@@ -22,7 +22,7 @@ export function AbsoluteBasics() {
     return <pre>Oh no, Error occured! {JSON.stringify(postsQuery.error)}</pre>
 
   return (
-    <div>
+    <div className="border-2 rounded-md ">
       {postsQuery.data.map((post: any) => (
         <div key={post.id}>{post.title}</div>
       ))}

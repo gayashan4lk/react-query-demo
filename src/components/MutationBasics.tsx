@@ -28,6 +28,7 @@ export function MutationBasics() {
         <div key={post.id}>{post.title}</div>
       ))}
       <button
+        className="btn btn-sm"
         disabled={postsMutation.isLoading}
         onClick={() => postsMutation.mutate("New post")}
       >

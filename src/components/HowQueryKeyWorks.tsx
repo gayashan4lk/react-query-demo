@@ -1,4 +1,5 @@
-// Absolute Basics of react-query
+// Using the queryKey you can identify the query and invalidate it
+
 import { useQuery } from "@tanstack/react-query"
 import { wait, posts } from "../utils"
 

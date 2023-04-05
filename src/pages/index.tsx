@@ -39,7 +39,10 @@ export default function Home() {
       {postsQuery.data.map((post: any) => (
         <div key={post.id}>{post.title}</div>
       ))}
-      <button onClick={() => postsMutation.mutate("New post")}>
+      <button
+        disabled={postsMutation.isLoading}
+        onClick={() => postsMutation.mutate("New post")}
+      >
         Add New Post
       </button>
     </div>

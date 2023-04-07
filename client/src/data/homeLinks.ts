@@ -14,4 +14,9 @@ export const homeLinks = [
     href: "lessons/how-query-key-works",
     label: "Lesson 3: How Query Key Works",
   },
+  {
+    id: 3,
+    href: "lessons/posts",
+    label: "Lesson 4: Posts",
+  },
 ]

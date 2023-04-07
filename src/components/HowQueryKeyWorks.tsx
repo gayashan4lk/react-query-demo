@@ -6,7 +6,11 @@ import { wait, posts } from "../util-funcs"
 export function HowQueryKeyWorks() {
   const postsQuery = useQuery({
     queryKey: ["myposts"],
-    queryFn: () => wait(1000).then(() => [...posts]),
+    queryFn: ({ queryKey }) =>
+      wait(1000).then(() => {
+        console.log(queryKey)
+        return [...posts]
+      }),
   })
 
   if (postsQuery.isLoading) return <div>Loading...</div>

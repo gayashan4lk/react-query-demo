@@ -6,6 +6,7 @@ export function PostsList2() {
     queryKey: ["posts"],
     queryFn: getPosts,
   })
+  console.log(data)
 
   if (isLoading) return <div>Loading...</div>
 

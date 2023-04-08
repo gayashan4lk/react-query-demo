@@ -19,4 +19,9 @@ export const homeLinks = [
     href: "lessons/posts",
     label: "Lesson 4: Posts",
   },
+  {
+    id: 4,
+    href: "lessons/post",
+    label: "Lesson 5: Post",
+  },
 ]

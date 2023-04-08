@@ -5,6 +5,7 @@ export function PostsList1() {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
+    refetchInterval: 5 * 60 * 1000,
   })
 
   if (isLoading) return <div>Loading...</div>

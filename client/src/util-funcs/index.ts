@@ -12,3 +12,15 @@ export async function getPosts() {
   const data = await response.json()
   return data
 }
+
+export async function getPost(id: string) {
+  const response = await fetch(`http://localhost:3001/posts/${id}`)
+  const data = await response.json()
+  return data
+}
+
+export async function getUser(id: string) {
+  const response = await fetch(`http://localhost:3001/users/${id}`)
+  const data = await response.json()
+  return data
+}

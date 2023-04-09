@@ -1,21 +1,29 @@
 import { useRef } from "react"
 import { useMutation } from "@tanstack/react-query"
-import { createPost } from "../util-funcs/index"
+import { createPost } from "../util-funcs/api-functions"
+import { IPostViewModel } from "@/types"
 
 export function CreatePost() {
   const titleRef = useRef<HTMLInputElement>(null)
   const bodyRef = useRef<HTMLInputElement>(null)
 
-  const { mutate } = useMutation({
+  // const { mutate } = useMutation({
+  //   mutationFn: createPost,
+  // })
+
+  const postMutation = useMutation({
     mutationFn: createPost,
   })
 
   function handleSubmit(event: any): void {
-    event.preventDefault()
-    mutate({
+    event.preventDefault(event)
+    const postData: IPostViewModel = {
       title: titleRef.current?.value as string,
       body: bodyRef.current?.value as string,
-    })
+    }
+    console.log(postData)
+    console.log(postMutation)
+    postMutation.mutate(postData)
   }
 
   return (

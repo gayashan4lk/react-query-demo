@@ -105,18 +105,20 @@
     {
       "title": "",
       "body": "",
-      "id": 1672862928920
-    },
-    {
-      "title": "My post",
-      "body": "Body of post",
-      "id": 1672862928921
-    },
-    {
-      "title": "",
-      "body": "",
       "userId": 1,
       "id": 1681014396647
+    },
+    {
+      "title": "My test post",
+      "body": "This is the body of my test post",
+      "userId": 1,
+      "id": 1681022918785
+    },
+    {
+      "title": "Hi",
+      "body": "How are you?",
+      "userId": 1,
+      "id": 1681023349213
     }
   ],
   "users": [

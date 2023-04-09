@@ -24,3 +24,31 @@ export async function getUser(id: string) {
   const data = await response.json()
   return data
 }
+
+export async function createPost({
+  title,
+  body,
+}: {
+  title: string
+  body: string
+}) {
+  const postData = {
+    title,
+    body,
+    userId: 1,
+    id: Date.now(),
+  }
+  try {
+    const response = await fetch(`http://localhost:3001/posts/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    })
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return new Error("Oh no, something went wrong!")
+  }
+}

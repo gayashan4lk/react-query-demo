@@ -17,23 +17,23 @@ export function MutationBasics() {
     onSuccess: () => queryClient.invalidateQueries(["posts"]),
   })
 
-  if (postsQuery.isLoading) return <div>Loading...</div>
+  if (postsQuery.isLoading) return <>Loading...</>
 
   if (postsQuery.isError)
     return <pre>Oh no, Error occured! {JSON.stringify(postsQuery.error)}</pre>
 
   return (
-    <div>
+    <>
       {postsQuery.data.map((post: any) => (
         <div key={post.id}>{post.title}</div>
       ))}
       <button
-        className="btn btn-sm"
+        className="btn btn-sm my-4"
         disabled={postsMutation.isLoading}
-        onClick={() => postsMutation.mutate("New post")}
+        onClick={() => postsMutation.mutate("My fake post")}
       >
         Add New Post
       </button>
-    </div>
+    </>
   )
 }

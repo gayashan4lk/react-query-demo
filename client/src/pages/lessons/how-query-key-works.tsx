@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       <LessonTitle label="How Query Key Works" />
-      <MutationBasics />
-      <HowQueryKeyWorks />
+      <div className="m-8">
+        <MutationBasics />
+        <HowQueryKeyWorks />
+      </div>
     </>
   )
 }

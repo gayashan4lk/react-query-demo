@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <>
       <LessonTitle label="Absolute Basics" />
-      <AbsoluteBasics />
+      <div className="m-8">
+        <AbsoluteBasics />
+      </div>
     </>
   )
 }

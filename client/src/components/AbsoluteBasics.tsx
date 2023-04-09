@@ -16,16 +16,20 @@ export function AbsoluteBasics() {
   //   queryFn: () => Promise.reject("This is a bad error"),
   // }
 
-  if (postsQuery.isLoading) return <div>Loading...</div>
+  if (postsQuery.isLoading) return <>Loading...</>
 
   if (postsQuery.isError)
-    return <pre>Oh no, Error occured! {JSON.stringify(postsQuery.error)}</pre>
+    return (
+      <pre className="m-8">
+        Oh no, Error occured! {JSON.stringify(postsQuery.error)}
+      </pre>
+    )
 
   return (
-    <div className="border-2 rounded-md ">
+    <>
       {postsQuery.data.map((post: any) => (
         <div key={post.id}>{post.title}</div>
       ))}
-    </div>
+    </>
   )
 }

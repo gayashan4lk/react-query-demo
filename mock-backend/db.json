@@ -111,6 +111,12 @@
       "title": "My post",
       "body": "Body of post",
       "id": 1672862928921
+    },
+    {
+      "title": "",
+      "body": "",
+      "userId": 1,
+      "id": 1681014396647
     }
   ],
   "users": [

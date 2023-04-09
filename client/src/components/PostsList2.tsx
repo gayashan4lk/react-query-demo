@@ -14,7 +14,7 @@ export function PostsList2() {
 
   return (
     <div>
-      <h1 className="font-bold">Posts List 2</h1>
+      <h1 className="font-bold mb-4">Posts List 2</h1>
       <ol>
         {data.map((post: any) => (
           <li key={post.id}>{post.title}</li>

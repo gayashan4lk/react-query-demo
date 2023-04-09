@@ -20,17 +20,29 @@ export function CreatePost() {
 
   return (
     <div>
-      <h1>Create post</h1>
+      <h1 className="font-bold mb-4">Create post</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input id="title" type="text" ref={titleRef} />
+        <div className="form-control w-full max-w-xs">
+          <label className="label" htmlFor="title">
+            <span className="label-text">Title</span>
+          </label>
+          <input
+            id="title"
+            className="input input-bordered w-full max-w-xs mb-4"
+            type="text"
+            ref={titleRef}
+          />
+          <label htmlFor="body">
+            <span className="label-text">Body</span>
+          </label>
+          <input
+            id="body"
+            className="input input-bordered w-full max-w-xs mb-4"
+            type="text"
+            ref={bodyRef}
+          />
         </div>
-        <div>
-          <label htmlFor="body">Body</label>
-          <input id="body" type="text" ref={bodyRef} />
-        </div>
-        <button className="btn btn-sm">Create</button>
+        <button className="btn btn-sm my-4">Create</button>
       </form>
     </div>
   )

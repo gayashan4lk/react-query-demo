@@ -20,18 +20,18 @@ export function Post({ id }: { id: string }) {
     queryFn: () => getUser(data?.userId),
   })
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <>Loading...</>
   if (isError) return <pre>Oh no, Error occured! {JSON.stringify(error)}</pre>
 
   return (
     <>
-      <h1 className="font-bold">{data.title}</h1>
+      <h1 className="font-bold text-2xl mb-4">{data.title}</h1>
+      <p>{data.body}</p>
       <sub>
         {userIsLoading && "Loading user..."}
         {userIsError && "Error loading user..."}
         {userIsSuccess && `By ${userData.name}`}
       </sub>
-      <p>{data.body}</p>
     </>
   )
 }

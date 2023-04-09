@@ -6,22 +6,43 @@ import { CreatePost } from "@/components/CreatePost"
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(<PostsList1 />)
+  const [activeTab, setActiveTab] = useState(0)
+
+  function handleOnclick(element: JSX.Element, index: number) {
+    setCurrentPage(element)
+    setActiveTab(index)
+  }
+
   return (
     <>
-      <button className="btn" onClick={() => setCurrentPage(<PostsList1 />)}>
-        Posts List 1
-      </button>
-      <button className="btn" onClick={() => setCurrentPage(<PostsList2 />)}>
-        Posts List 2
-      </button>
-      <button className="btn" onClick={() => setCurrentPage(<Post id="1" />)}>
-        FirstPage
-      </button>
-      <button className="btn" onClick={() => setCurrentPage(<CreatePost />)}>
-        New Post
-      </button>
+      <div className="tabs tabs-boxed px-4">
+        <button
+          className={`tab ${activeTab === 0 && "tab-active"}`}
+          onClick={() => handleOnclick(<PostsList1 />, 0)}
+        >
+          Posts List 1
+        </button>
+        <button
+          className={`tab ${activeTab === 1 && "tab-active"}`}
+          onClick={() => handleOnclick(<PostsList2 />, 1)}
+        >
+          Posts List 2
+        </button>
+        <button
+          className={`tab ${activeTab === 2 && "tab-active"}`}
+          onClick={() => handleOnclick(<Post id="1" />, 2)}
+        >
+          FirstPage
+        </button>
+        <button
+          className={`tab ${activeTab === 3 && "tab-active"}`}
+          onClick={() => handleOnclick(<CreatePost />, 3)}
+        >
+          New Post
+        </button>
+      </div>
       <br />
-      {currentPage}
+      <div className="mx-8">{currentPage}</div>
     </>
   )
 }

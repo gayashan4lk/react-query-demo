@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <>
       <LessonTitle label="Mutation Basics" />
-      <MutationBasics />
+      <div className="m-8">
+        <MutationBasics />
+      </div>
     </>
   )
 }

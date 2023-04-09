@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { getPosts } from "../util-funcs/api-functions"
-import { Post } from "@/types"
+import { IPost } from "@/types"
 
 export function PostsList1() {
   const { data, isLoading, isError, error } = useQuery({
@@ -17,7 +17,7 @@ export function PostsList1() {
     <div>
       <h1 className="font-bold mb-4">Posts List 1</h1>
       <ol>
-        {data.map((post: Post) => (
+        {data.map((post: IPost) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ol>

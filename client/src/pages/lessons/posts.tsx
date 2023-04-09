@@ -30,7 +30,7 @@ export default function Home() {
         </button>
         <button
           className={`tab ${activeTab === 2 && "tab-active"}`}
-          onClick={() => handleOnclick(<Post id="1" />, 2)}
+          onClick={() => handleOnclick(<Post id={1} />, 2)}
         >
           FirstPage
         </button>

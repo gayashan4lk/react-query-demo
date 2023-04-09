@@ -1,9 +1,15 @@
 import { useQuery } from "@tanstack/react-query"
-import { getPost } from "../util-funcs/index"
-import { getUser } from "../util-funcs/index"
+import { getPost } from "../util-funcs/api-functions"
+import { getUser } from "../util-funcs/api-functions"
+import { IPost } from "@/types"
 
-export function Post({ id }: { id: string }) {
-  const { data, isLoading, isError, error } = useQuery({
+export function Post({ id }: { id: number }) {
+  const {
+    data: postData,
+    isLoading: postIsLoading,
+    isError: postIsError,
+    error: postError,
+  } = useQuery({
     queryKey: ["posts", id],
     queryFn: () => getPost(id),
   })
@@ -15,18 +21,19 @@ export function Post({ id }: { id: string }) {
     error: userError,
     isSuccess: userIsSuccess,
   } = useQuery({
-    queryKey: ["users", data?.userId],
-    enabled: !!data?.userId,
-    queryFn: () => getUser(data?.userId),
+    queryKey: ["users", postData?.userId],
+    enabled: !!postData?.userId,
+    queryFn: () => getUser(postData?.userId),
   })
 
-  if (isLoading) return <>Loading...</>
-  if (isError) return <pre>Oh no, Error occured! {JSON.stringify(error)}</pre>
+  if (postIsLoading) return <>Loading...</>
+  if (postIsError)
+    return <pre>Oh no, Error occured! {JSON.stringify(postError)}</pre>
 
   return (
     <>
-      <h1 className="font-bold text-2xl mb-4">{data.title}</h1>
-      <p>{data.body}</p>
+      <h1 className="font-bold text-2xl mb-4">{postData.title}</h1>
+      <p>{postData.body}</p>
       <sub>
         {userIsLoading && "Loading user..."}
         {userIsError && "Error loading user..."}

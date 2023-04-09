@@ -1,6 +1,4 @@
-export type Post = {
-  id: number
-  userId: number
-  title: string
-  body: string
-}
+import { IPost } from "./IPost"
+import { IUser } from "./IUser"
+
+export type { IPost, IUser }

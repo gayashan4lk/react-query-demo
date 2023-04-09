@@ -8,21 +8,33 @@ export function wait(duration: number) {
 }
 
 export async function getPosts() {
-  const response = await fetch("http://localhost:3001/posts?_sort=title")
-  const data = await response.json()
-  return data
+  try {
+    const response = await fetch("http://localhost:3001/posts?_sort=title")
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return new Error(`Oh no, something went wrong! ${error}`)
+  }
 }
 
 export async function getPost(id: string) {
-  const response = await fetch(`http://localhost:3001/posts/${id}`)
-  const data = await response.json()
-  return data
+  try {
+    const response = await fetch(`http://localhost:3001/posts/${id}`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return new Error(`Oh no, something went wrong! ${error}`)
+  }
 }
 
 export async function getUser(id: string) {
-  const response = await fetch(`http://localhost:3001/users/${id}`)
-  const data = await response.json()
-  return data
+  try {
+    const response = await fetch(`http://localhost:3001/users/${id}`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return new Error(`Oh no, something went wrong! ${error}`)
+  }
 }
 
 export async function createPost({
